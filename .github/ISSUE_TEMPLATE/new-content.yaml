@@ -33,5 +33,5 @@ body:
         one: I will write a draft of the proposed content
         two: I can help the team by providing enough information to write the material
         three: I only want to review the material when it's finished
-    validations:
+      validations:
       required: true
