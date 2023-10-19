@@ -9,7 +9,7 @@ and ensuring reliable execution of circuits with additional job management tools
 
 The [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance) class is being deprecated for several reasons:
 On one hand, the functionality of {meth}`~qiskit.utils.QuantumInstance.execute` has
-now been delegated to the different implementations of the {mod}`~qiskit.primitives` base classes.
+now been delegated to the different implementations of the [`qiskit.primitives`](../api/qiskit/primitives) base classes.
 On the other hand, with the direct implementation of transpilation at the primitives level,
 the algorithms no longer
 need to manage that aspect of execution, and thus {meth}`~qiskit.utils.QuantumInstance.transpile` is no longer
@@ -33,7 +33,7 @@ The following table summarizes the migration alternatives for the [`qiskit.utils
 ```
 
 The remainder of this guide will focus on the {meth}`.QuantumInstance.execute` to
-{mod}`~qiskit.primitives` migration path.
+[`qiskit.primitives`](../api/qiskit/primitives) migration path.
 
 ## Contents
 
@@ -74,7 +74,7 @@ The [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance)
 It took inspiration from {func}`~qiskit.execute_function.execute`, but retained config information that could be set
 at the algorithm level, to save the user from defining the same parameters for every transpile/execute call.
 
-The {mod}`qiskit.primitives` share some of these features, but unlike the [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance) class,
+The [`qiskit.primitives`](../api/qiskit/primitives) module shares some of these features, but unlike the [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance) class,
 there are multiple primitive classes, and each is optimized for a specific
 purpose. Selecting the right primitive (`Sampler` or `Estimator`) requires some knowledge about
 **what** it is expected to do and **where/how** it is expected to run.
@@ -317,7 +317,7 @@ please refer to the API reference or source code of the desired primitive implem
     :animate: fade-in-slide-down
 
     While this example does not include a direct call to ``QuantumInstance.execute()``, it shows
-    how to migrate from a [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance)-based to a :mod:`~qiskit.primitives`-based
+    how to migrate from a [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance)-based to a [`qiskit.primitives`](../api/qiskit/primitives)-based
     workflow.
 
     **Using Quantum Instance**

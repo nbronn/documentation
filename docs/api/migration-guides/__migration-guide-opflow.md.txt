@@ -2,11 +2,11 @@
 
 ## TL;DR
 
-The new {mod}`~qiskit.primitives`, in combination with the {mod}`~qiskit.quantum_info` module, have superseded
+The new [`qiskit.primitives`](../api/qiskit/primitives) module, in combination with the {mod}`~qiskit.quantum_info` module, have superseded
 functionality of {mod}`~qiskit.opflow`. Thus, the latter is being deprecated.
 
 In this migration guide, you will find instructions and code examples for how to migrate your code based on
-the {mod}`~qiskit.opflow` module to the {mod}`~qiskit.primitives` and {mod}`~qiskit.quantum_info` modules.
+the {mod}`~qiskit.opflow` module to the [`qiskit.primitives`](../api/qiskit/primitives) and {mod}`~qiskit.quantum_info` modules.
 
 :::{note}
 The use of {mod}`~qiskit.opflow` was tightly coupled to the [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance) class, which
@@ -32,12 +32,12 @@ If this is the case, it will be explicitly indicated in the corresponding sectio
 The {mod}`~qiskit.opflow` module was originally introduced as a layer between circuits and algorithms, a series of building blocks
 for quantum algorithms research and development.
 
-The recent release of the {mod}`qiskit.primitives` introduced a new paradigm for interacting with backends. Now, instead of
+The recent release of the [`qiskit.primitives`](../api/qiskit/primitives) module introduced a new paradigm for interacting with backends. Now, instead of
 preparing a circuit to execute with a `backend.run()` type of method, the algorithms can leverage the {class}`.Sampler` and
 {class}`.Estimator` primitives, send parametrized circuits and observables, and directly receive quasi-probability distributions or
 expectation values (respectively). This workflow simplifies considerably the pre-processing and post-processing steps
 that previously relied on this module; encouraging us to move away from {mod}`~qiskit.opflow`
-and find new paths for developing algorithms based on the {mod}`~qiskit.primitives` interface and
+and find new paths for developing algorithms based on the [`qiskit.primitives`](../api/qiskit/primitives) interface and
 the {mod}`~qiskit.quantum_info` module.
 
 This guide traverses the opflow submodules and provides either a direct alternative
@@ -803,7 +803,7 @@ The role of the {class}`qiskit.opflow.converters` submodule was to convert the o
 ({class}`~qiskit.opflow.converters.TwoQubitReduction`, {class}`~qiskit.opflow.converters.PauliBasisChange`...).
 In the case of the {class}`~qiskit.opflow.converters.CircuitSampler`, it traversed an operator and outputted
 approximations of its state functions using a quantum backend.
-Notably, this functionality has been replaced by the {mod}`~qiskit.primitives`.
+Notably, this functionality has been replaced by the [`qiskit.primitives`](../api/qiskit/primitives) module.
 
 ```{eval-rst}
 .. list-table::

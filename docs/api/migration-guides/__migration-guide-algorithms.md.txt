@@ -2,11 +2,11 @@
 
 ## TL;DR
 
-The {mod}`qiskit.algorithms` module has been fully refactored to use the module {mod}`~qiskit.primitives`, for circuit execution, instead of the [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance) class, which is now deprecated.
+The {mod}`qiskit.algorithms` module has been fully refactored to use the module [`qiskit.primitives`](../api/qiskit/primitives), for circuit execution, instead of the [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance) class, which is now deprecated.
 
 There have been **3 types of refactoring**:
 
-1. Algorithms refactored in a new location to support {mod}`~qiskit.primitives`. These algorithms have the same
+1. Algorithms refactored in a new location to support [`qiskit.primitives`](../api/qiskit/primitives). These algorithms have the same
    class names as the [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance)-based ones but are in a new sub-package.
 
    > :::{attention}
@@ -21,7 +21,7 @@ There have been **3 types of refactoring**:
    > - [Time Evolvers]
 
 2. Algorithms refactored in-place (same namespace) to support both [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance) and
-   {mod}`~qiskit.primitives`. In the future, the use of [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance) will be removed.
+   [`qiskit.primitives`](../api/qiskit/primitives). In the future, the use of [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance) will be removed.
 
    > - [Amplitude Amplifiers]
    > - [Amplitude Estimators]
@@ -42,7 +42,7 @@ The remainder of this migration guide will focus on the algorithms with migratio
 *Back to* [TL;DR]
 
 The {mod}`qiskit.algorithms` module was originally built on top of the {mod}`qiskit.opflow` library and the
-[`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance) utility. The development of the {mod}`~qiskit.primitives`
+[`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance) utility. The development of the [`qiskit.primitives`](../api/qiskit/primitives) module
 introduced a higher-level execution paradigm, with the `Estimator` for computation of
 expectation values for observables, and `Sampler` for executing circuits and returning probability
 distributions. These tools allowed to refactor the {mod}`qiskit.algorithms` module, and deprecate both
@@ -152,7 +152,7 @@ In this guide, we will cover 3 different common configurations for algorithms th
 *Back to* [TL;DR]
 
 The minimum eigensolver algorithms belong to the first type of refactoring listed above
-(Algorithms refactored in a new location to support {mod}`~qiskit.primitives`).
+(Algorithms refactored in a new location to support [`qiskit.primitives`](../api/qiskit/primitives)).
 Instead of a [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance), {mod}`qiskit.algorithms.minimum_eigensolvers` are now initialized
 using an instance of the {mod}`~qiskit.primitives.Sampler` or {mod}`~qiskit.primitives.Estimator` primitive, depending
 on the algorithm. The legacy classes can still be found in {mod}`qiskit.algorithms.minimum_eigen_solvers`.
@@ -525,7 +525,7 @@ For complete code examples, see the following updated tutorials:
 *Back to* [TL;DR]
 
 The eigensolver algorithms also belong to the first type of refactoring
-(Algorithms refactored in a new location to support {mod}`~qiskit.primitives`). Instead of a
+(Algorithms refactored in a new location to support [`qiskit.primitives`](../api/qiskit/primitives)). Instead of a
 [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance), {mod}`qiskit.algorithms.eigensolvers` are now initialized
 using an instance of the {class}`~qiskit.primitives.Sampler` or {class}`~qiskit.primitives.Estimator` primitive, or
 **a primitive-based subroutine**, depending on the algorithm. The legacy classes can still be found
@@ -717,7 +717,7 @@ to {class}`qiskit.algorithms.eigensolvers.MinimumEigensolver` to conform to the 
 *Back to* [TL;DR]
 
 The time evolvers are the last group of algorithms to undergo the first type of refactoring
-(Algorithms refactored in a new location to support {mod}`~qiskit.primitives`).
+(Algorithms refactored in a new location to support [`qiskit.primitives`](../api/qiskit/primitives)).
 Instead of a [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance), {mod}`qiskit.algorithms.time_evolvers` are now initialized
 using an instance of the {class}`~qiskit.primitives.Estimator` primitive. The legacy classes can still be found
 in {mod}`qiskit.algorithms.evolvers`.
