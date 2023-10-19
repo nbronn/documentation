@@ -9,8 +9,8 @@ In this migration guide, you will find instructions and code examples for how to
 the {mod}`~qiskit.opflow` module to the {mod}`~qiskit.primitives` and {mod}`~qiskit.quantum_info` modules.
 
 :::{note}
-The use of {mod}`~qiskit.opflow` was tightly coupled to the {class}`~qiskit.utils.QuantumInstance` class, which
-is also being deprecated. For more information on migrating the {class}`~qiskit.utils.QuantumInstance`, please
+The use of {mod}`~qiskit.opflow` was tightly coupled to the [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance) class, which
+is also being deprecated. For more information on migrating the [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance) class, please
 read the [quantum instance migration guide](http://qisk.it/qi_migration).
 :::
 
@@ -18,12 +18,12 @@ read the [quantum instance migration guide](http://qisk.it/qi_migration).
 
 :::{attention}
 Most references to the {class}`qiskit.primitives.Sampler` or {class}`qiskit.primitives.Estimator` in this guide
-can be replaced with instances of any primitive implementation. For example Aer primitives ({class}`qiskit_aer.primitives.Sampler`/{class}`qiskit_aer.primitives.Estimator`) or IBM's Qiskit Runtime primitives ({class}`qiskit_ibm_runtime.Sampler`/{class}`qiskit_ibm_runtime.Estimator`).
+can be replaced with instances of any primitive implementation. For example Aer primitives ([`qiskit_aer.primitives.Sampler`](https://qiskit.org/ecosystem/aer/stubs/qiskit_aer.primitives.Sampler.html)/[`qiskit_aer.primitives.Estimator`](https://qiskit.org/ecosystem/aer/stubs/qiskit_aer.primitives.Estimator.html) or IBM's Qiskit Runtime primitives ({class}`qiskit_ibm_runtime.Sampler`/{class}`qiskit_ibm_runtime.Estimator`).
 Specific backends can be wrapped with ({class}`qiskit.primitives.BackendSampler`, {class}`qiskit.primitives.BackendEstimator`) to also present primitive-compatible interfaces.
 
 Certain classes, such as the
 {class}`~qiskit.opflow.expectations.AerPauliExpectation`, can only be replaced by a specific primitive instance
-(in this case, {class}`qiskit_aer.primitives.Estimator`), or require a specific option configuration.
+(in this case, [`qiskit_aer.primitives.Estimator`](https://qiskit.org/ecosystem/aer/stubs/qiskit_aer.primitives.Estimator.html)), or require a specific option configuration.
 If this is the case, it will be explicitly indicated in the corresponding section.
 :::
 
@@ -1252,7 +1252,7 @@ are different `Estimator` implementations, as noted {ref}`here <attention_primit
      - No direct replacement. This class was used to create instances of one of the classes listed below.
 
    * - :class:`~qiskit.opflow.expectations.AerPauliExpectation`
-     - Use :class:`qiskit_aer.primitives.Estimator`  with ``approximation=True``, and then ``shots=None`` as ``run_options``.
+     - Use [`qiskit_aer.primitives.Estimator`](https://qiskit.org/ecosystem/aer/stubs/qiskit_aer.primitives.Estimator.html)  with ``approximation=True``, and then ``shots=None`` as ``run_options``.
        See example below.
 
    * - :class:`~qiskit.opflow.expectations.MatrixExpectation`
@@ -1261,7 +1261,7 @@ are different `Estimator` implementations, as noted {ref}`here <attention_primit
 
    * - :class:`~qiskit.opflow.expectations.PauliExpectation`
      - Use any Estimator primitive (for :class:`qiskit.primitives.Estimator`, set ``shots!=None`` for a shot-based
-       simulation, for :class:`qiskit_aer.primitives.Estimator` , this is the default).
+       simulation, for [`qiskit_aer.primitives.Estimator`](https://qiskit.org/ecosystem/aer/stubs/qiskit_aer.primitives.Estimator.html) , this is the default).
 
 ```
 
