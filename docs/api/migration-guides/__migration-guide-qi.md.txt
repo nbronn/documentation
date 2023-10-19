@@ -110,7 +110,7 @@ Arguably, the `Sampler` is the closest primitive to [`qiskit.utils.QuantumInstan
 both execute circuits and provide a result back. However, with the [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance),
 the result data was backend dependent (it could be a counts `dict`, a {class}`numpy.array` for
 statevector simulations, etc), while the `Sampler` normalizes its `SamplerResult` to
-return a {class}`~qiskit.result.QuasiDistribution` object with the resulting quasi-probability distribution.
+return a [`qiskit.result.QuasiDistribution`](../api/qiskit/qiskit.result.QuasiDistribution) object with the resulting quasi-probability distribution.
 
 The `Estimator` provides a specific abstraction for the expectation value calculation that can replace
 the use of {class}`.QuantumInstance` as well as the associated pre- and post-processing steps, usually performed
@@ -276,11 +276,11 @@ please refer to the API reference or source code of the desired primitive implem
 
     .. note::
 
-        The :class:`qiskit.result.QuasiDistribution` class returned as part of the :class:`qiskit.primitives.SamplerResult`
+        The [`qiskit.result.QuasiDistribution`](../api/qiskit/qiskit.result.QuasiDistribution) class returned as part of the :class:`qiskit.primitives.SamplerResult`
         exposes two methods to convert the result keys from integer to binary strings/hexadecimal:
 
-            - :meth:`qiskit.result.QuasiDistribution.binary_probabilities`
-            - :meth:`qiskit.result.QuasiDistribution.hex_probabilities`
+            - [`qiskit.result.QuasiDistribution.binary_probabilities`](../api/qiskit/qiskit.result.QuasiDistribution#binary_probabilities)
+            - [`qiskit.result.QuasiDistribution.hex_probabilities`](../api/qiskit/qiskit.result.QuasiDistribution#hex_probabilities)
 
 
     .. code-block:: python

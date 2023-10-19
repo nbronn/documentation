@@ -706,7 +706,7 @@ identify the subclass that is being used, to then look for an alternative.
    * - :class:`~qiskit.opflow.state_fns.DictStateFn`
      - This class was used to store efficient representations of sparse measurement results. The
        :class:`~qiskit.primitives.Sampler` now returns the measurements as an instance of
-       :class:`~qiskit.result.QuasiDistribution` (see example in `Converters`_).
+       [`qiskit.result.QuasiDistribution`](../api/qiskit/qiskit.result.QuasiDistribution) (see example in `Converters`_).
 
    * - :class:`~qiskit.opflow.state_fns.VectorStateFn`
      - This class can be replaced with :class:`~qiskit.quantum_info.Statevector` or
