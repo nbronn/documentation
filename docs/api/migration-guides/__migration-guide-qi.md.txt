@@ -8,11 +8,11 @@ conform to job limits,
 and ensuring reliable execution of circuits with additional job management tools.
 
 The [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance) class is being deprecated for several reasons:
-On one hand, the functionality of {meth}`~qiskit.utils.QuantumInstance.execute` has
+On one hand, the functionality of [`qiskit.utils.QuantumInstance.execute`](../api/qiskit/qiskit.utils.QuantumInstance#execute) has
 now been delegated to the different implementations of the [`qiskit.primitives`](../api/qiskit/primitives) base classes.
 On the other hand, with the direct implementation of transpilation at the primitives level,
 the algorithms no longer
-need to manage that aspect of execution, and thus {meth}`~qiskit.utils.QuantumInstance.transpile` is no longer
+need to manage that aspect of execution, and thus [`qiskit.utils.QuantumInstance.transpile`](../api/qiskit/qiskit.utils.QuantumInstance#transpile) is no longer
 required by the workflow. If desired, custom transpilation routines can still be performed at the
 user level through the {mod}`~qiskit.transpiler` module (see table below).
 
@@ -24,15 +24,15 @@ The following table summarizes the migration alternatives for the [`qiskit.utils
 
    * - QuantumInstance method
      - Alternative
-   * - :meth:`.QuantumInstance.execute`
+   * - [`qiskit.utils.QuantumInstance.execute`](../api/qiskit/qiskit.utils.QuantumInstance#execute)
      - :meth:`qiskit.primitives.Sampler.run` or :meth:`qiskit.primitives.Estimator.run`
-   * - :meth:`.QuantumInstance.transpile`
+   * - [`qiskit.utils.QuantumInstance.transpile`](../api/qiskit/qiskit.utils.QuantumInstance#transpile)
      - :meth:`qiskit.compiler.transpile`
-   * - :meth:`.QuantumInstance.assemble`
+   * - [`qiskit.utils.QuantumInstance.assemble`](../api/qiskit/qiskit.utils.QuantumInstance#assemble)
      - :meth:`qiskit.compiler.assemble`
 ```
 
-The remainder of this guide will focus on the {meth}`.QuantumInstance.execute` to
+The remainder of this guide will focus on the [`qiskit.utils.QuantumInstance.execute`](../api/qiskit/qiskit.utils.QuantumInstance#execute) to
 [`qiskit.primitives`](../api/qiskit/primitives) migration path.
 
 ## Contents
