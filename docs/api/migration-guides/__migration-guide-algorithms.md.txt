@@ -2,7 +2,7 @@
 
 ## TL;DR
 
-The {mod}`qiskit.algorithms` module has been fully refactored to use the module [`qiskit.primitives`](../api/qiskit/primitives), for circuit execution, instead of the [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance) class, which is now deprecated.
+The [`qiskit.algorithms`](../api/qiskit/algorithms) module has been fully refactored to use the module [`qiskit.primitives`](../api/qiskit/primitives), for circuit execution, instead of the [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance) class, which is now deprecated.
 
 There have been **3 types of refactoring**:
 
@@ -11,7 +11,7 @@ There have been **3 types of refactoring**:
 
    > :::{attention}
    > **Careful with import paths!!** The legacy algorithms are still importable directly from
-   > {mod}`qiskit.algorithms`. Until the legacy imports are removed, this convenience import is not available
+   > [`qiskit.algorithms`](../api/qiskit/algorithms). Until the legacy imports are removed, this convenience import is not available
    > for the refactored algorithms. Thus, to import the refactored algorithms you must always
    > **specify the full import path** (e.g., `from qiskit.algorithms.eigensolvers import VQD`)
    > :::
@@ -27,7 +27,7 @@ There have been **3 types of refactoring**:
    > - [Amplitude Estimators]
    > - [Phase Estimators]
 
-3. Algorithms that were deprecated and are now removed entirely from {mod}`qiskit.algorithms`. These are algorithms that do not currently serve
+3. Algorithms that were deprecated and are now removed entirely from [`qiskit.algorithms`](../api/qiskit/algorithms). These are algorithms that do not currently serve
    as building blocks for applications. Their main value is educational, and as such, will be kept as tutorials
    in the qiskit textbook. You can consult the tutorials in the following links:
 
@@ -35,17 +35,17 @@ There have been **3 types of refactoring**:
    > - [Factorizers (Shor)](https://learn.qiskit.org/course/ch-algorithms/shors-algorithm)
 
 The remainder of this migration guide will focus on the algorithms with migration alternatives within
-{mod}`qiskit.algorithms`, that is, those under refactoring types 1 and 2.
+[`qiskit.algorithms`](../api/qiskit/algorithms), that is, those under refactoring types 1 and 2.
 
 ## Background
 
 *Back to* [TL;DR]
 
-The {mod}`qiskit.algorithms` module was originally built on top of the {mod}`qiskit.opflow` library and the
+The [`qiskit.algorithms`](../api/qiskit/algorithms) module was originally built on top of the {mod}`qiskit.opflow` library and the
 [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance) utility. The development of the [`qiskit.primitives`](../api/qiskit/primitives) module
 introduced a higher-level execution paradigm, with the `Estimator` for computation of
 expectation values for observables, and `Sampler` for executing circuits and returning probability
-distributions. These tools allowed to refactor the {mod}`qiskit.algorithms` module, and deprecate both
+distributions. These tools allowed to refactor the [`qiskit.algorithms`](../api/qiskit/algorithms) module, and deprecate both
 {mod}`qiskit.opflow` and [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance).
 
 :::{attention}
@@ -67,7 +67,7 @@ For further background and detailed migration steps, see the:
 *Back to* [TL;DR]
 
 The classes in
-{mod}`qiskit.algorithms` are initialized with any implementation of {class}`qiskit.primitive.BaseSampler` or class:`qiskit.primitive.BaseEstimator`.
+[`qiskit.algorithms`](../api/qiskit/algorithms) are initialized with any implementation of {class}`qiskit.primitive.BaseSampler` or class:`qiskit.primitive.BaseEstimator`.
 
 Once the kind of primitive is known, you can choose between the primitive implementations that better adjust to your case. For example:
 
