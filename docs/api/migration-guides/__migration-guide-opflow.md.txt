@@ -2,11 +2,11 @@
 
 ## TL;DR
 
-The new [`qiskit.primitives`](../api/qiskit/primitives) module, in combination with the {mod}`~qiskit.quantum_info` module, have superseded
+The new [`qiskit.primitives`](../api/qiskit/primitives) module, in combination with the [`qiskit.quantum_info`](../api/qiskit/quantum_info) module, have superseded
 functionality of {mod}`~qiskit.opflow`. Thus, the latter is being deprecated.
 
 In this migration guide, you will find instructions and code examples for how to migrate your code based on
-the {mod}`~qiskit.opflow` module to the [`qiskit.primitives`](../api/qiskit/primitives) and {mod}`~qiskit.quantum_info` modules.
+the {mod}`~qiskit.opflow` module to the [`qiskit.primitives`](../api/qiskit/primitives) and [`qiskit.quantum_info`](../api/qiskit/quantum_info) modules.
 
 :::{note}
 The use of {mod}`~qiskit.opflow` was tightly coupled to the [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance) class, which
@@ -38,10 +38,10 @@ preparing a circuit to execute with a `backend.run()` type of method, the algori
 expectation values (respectively). This workflow simplifies considerably the pre-processing and post-processing steps
 that previously relied on this module; encouraging us to move away from {mod}`~qiskit.opflow`
 and find new paths for developing algorithms based on the [`qiskit.primitives`](../api/qiskit/primitives) interface and
-the {mod}`~qiskit.quantum_info` module.
+the [`qiskit.quantum_info`](../api/qiskit/quantum_info) module.
 
 This guide traverses the opflow submodules and provides either a direct alternative
-(i.e., using {mod}`~qiskit.quantum_info`), or an explanation of how to replace their functionality in algorithms.
+(i.e., using [`qiskit.quantum_info`](../api/qiskit/quantum_info)), or an explanation of how to replace their functionality in algorithms.
 
 The functional equivalency can be roughly summarized as follows:
 
@@ -117,7 +117,7 @@ should be handled with care. Namely:
 1\. {class}`qiskit.opflow.OperatorBase` implements a broader algebra mixin. Some operator overloads that were
 commonly used {mod}`~qiskit.opflow` (for example `~` for `.adjoint()`) are not defined for
 {class}`qiskit.quantum_info.BaseOperator`. You might want to check the specific
-{mod}`~qiskit.quantum_info` subclass instead.
+[`qiskit.quantum_info`](../api/qiskit/quantum_info) subclass instead.
 
 2\. {class}`qiskit.opflow.OperatorBase` also implements methods such as `.to_matrix()` or `.to_spmatrix()`,
 which are only found in some of the {class}`qiskit.quantum_info.BaseOperator` subclasses.
@@ -134,7 +134,7 @@ Opflow provided shortcuts to define common single qubit states, operators, and n
 {ref}`operator_globals` module.
 
 These were mainly used for didactic purposes or quick prototyping, and can easily be replaced by their corresponding
-{mod}`~qiskit.quantum_info` class: {class}`~qiskit.quantum_info.Pauli`, {class}`~qiskit.quantum_info.Clifford` or
+[`qiskit.quantum_info`](../api/qiskit/quantum_info) class: {class}`~qiskit.quantum_info.Pauli`, {class}`~qiskit.quantum_info.Clifford` or
 {class}`~qiskit.quantum_info.Statevector`.
 
 ### 1-Qubit Paulis
@@ -414,7 +414,7 @@ directly creating a corresponding {class}`~qiskit.quantum_info.SparsePauliOp`, a
 *Back to* [Contents]
 
 Most of the workflows that previously relied on components from {mod}`~qiskit.opflow.primitive_ops` and
-{mod}`~qiskit.opflow.list_ops` can now leverage elements from {mod}`~qiskit.quantum_info`'s
+{mod}`~qiskit.opflow.list_ops` can now leverage elements from [`qiskit.quantum_info`](../api/qiskit/quantum_info)'s
 operators instead.
 Some of these classes do not require a 1-1 replacement because they were created to interface with other
 opflow components.
@@ -626,7 +626,7 @@ are used "under the hood" in the original code:
 *Back to* [Contents]
 
 The {mod}`~qiskit.opflow.list_ops` module contained classes for manipulating lists of {mod}`~qiskit.opflow.primitive_ops`
-or {mod}`~qiskit.opflow.state_fns`. The {mod}`~qiskit.quantum_info` alternatives for this functionality are the
+or {mod}`~qiskit.opflow.state_fns`. The [`qiskit.quantum_info`](../api/qiskit/quantum_info) alternatives for this functionality are the
 {class}`~qiskit.quantum_info.PauliList` and {class}`~qiskit.quantum_info.SparsePauliOp` (for sums of {class}`~qiskit.quantum_info.Pauli`s).
 
 ```{eval-rst}
@@ -657,7 +657,7 @@ or {mod}`~qiskit.opflow.state_fns`. The {mod}`~qiskit.quantum_info` alternatives
 
 *Back to* [Contents]
 
-The {mod}`~qiskit.opflow.state_fns` module can be generally replaced by subclasses of {mod}`~qiskit.quantum_info`'s
+The {mod}`~qiskit.opflow.state_fns` module can be generally replaced by subclasses of [`qiskit.quantum_info`](../api/qiskit/quantum_info)'s
 {class}`qiskit.quantum_info.QuantumState`.
 
 Similarly to {class}`~qiskit.opflow.primitive_ops.PrimitiveOp`, {class}`~qiskit.opflow.state_fns.StateFn`

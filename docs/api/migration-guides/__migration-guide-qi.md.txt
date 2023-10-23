@@ -14,7 +14,7 @@ On the other hand, with the direct implementation of transpilation at the primit
 the algorithms no longer
 need to manage that aspect of execution, and thus [`qiskit.utils.QuantumInstance.transpile`](../api/qiskit/qiskit.utils.QuantumInstance#transpile) is no longer
 required by the workflow. If desired, custom transpilation routines can still be performed at the
-user level through the {mod}`~qiskit.transpiler` module (see table below).
+user level through the [`qiskit.transpiler`](../api/qiskit/transpiler) module (see table below).
 
 The following table summarizes the migration alternatives for the [`qiskit.utils.QuantumInstance`](../api/qiskit/qiskit.utils.QuantumInstance) class:
 
@@ -55,7 +55,7 @@ Qiskit provides reference implementations in {class}`qiskit.primitives.Sampler` 
 wrappers for `backend.run()` that follow the primitives interface.
 
 Providers can implement these primitives as subclasses of {class}`~qiskit.primitives.BaseSampler` and {class}`~qiskit.primitives.BaseEstimator` respectively.
-IBM's Qiskit Runtime ({mod}`qiskit_ibm_runtime`) and Aer ([`qiskit_aer.primitives`](https://qiskit.org/ecosystem/aer/apidocs/aer_primitives.html)) are examples of native implementations of primitives.
+IBM's Qiskit Runtime ([`qiskit_ibm_runtime`](../api/qiskit-ibm-runtime/runtime_service)) and Aer ([`qiskit_aer.primitives`](https://qiskit.org/ecosystem/aer/apidocs/aer_primitives.html)) are examples of native implementations of primitives.
 
 This guide uses the following naming convention:
 
@@ -240,7 +240,7 @@ please refer to the API reference or source code of the desired primitive implem
 
     **a. Using the Reference Primitives**
 
-    Basic simulation implemented using the :mod:`qiskit.quantum_info` module. If shots are
+    Basic simulation implemented using the [`qiskit.quantum_info`](../api/qiskit/quantum_info) module. If shots are
     specified, the results will include shot noise. Please note that
     the resulting quasi-probability distribution does not use bitstrings but **integers** to identify the states.
 

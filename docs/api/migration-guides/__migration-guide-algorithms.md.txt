@@ -50,9 +50,9 @@ distributions. These tools allowed to refactor the [`qiskit.algorithms`](../api/
 
 :::{attention}
 The transition away from {mod}`qiskit.opflow` affects the classes that algorithms take as part of the problem
-setup. As a rule of thumb, most {mod}`qiskit.opflow` dependencies have a direct {mod}`qiskit.quantum_info`
-replacement. One common example is the class {mod}`qiskit.opflow.PauliSumOp`, used to define Hamiltonians
-(for example, to plug into VQE), that can be replaced by {mod}`qiskit.quantum_info.SparsePauliOp`.
+setup. As a rule of thumb, most {mod}`qiskit.opflow` dependencies have a direct [`qiskit.quantum_info`](../api/qiskit/quantum_info)
+replacement. One common example is the class [`qiskit.opflow.primitive_ops.PauliSumOp`](../api/qiskit/qiskit.opflow.primitive_ops.PauliSumOp), used to define Hamiltonians
+(for example, to plug into VQE), that can be replaced by [`qiskit.quantum_info.SparsePauliOp`](../api/qiskit/qiskit.quantum_info.SparsePauliOp).
 For information on how to migrate other {mod}`~qiskit.opflow` objects, you can refer to the
 [Opflow migration guide](https://qisk.it/opflow_migration).
 :::
